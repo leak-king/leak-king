@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>🔞 DraLarissa - Planos Exclusivos 🔞</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo da página */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7b7b, #9c27b0); /* Gradiente de fundo moderno */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            overflow-x: hidden;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Container principal */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 50px;
+            justify-items: center;
+            align-items: start;
+            text-align: center;
+        }
+
+        /* Card de planos */
+        .plan-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Título do plano */
+        .plan-card h3 {
+            font-size: 2.5rem;
+            color: #f39c12;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Preço */
+        .plan-card .price {
+            font-size: 2rem;
+            color: #ecf0f1;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Lista de benefícios */
+        .benefits {
+            list-style: none;
+            margin-bottom: 30px;
+            padding: 0;
+            font-size: 1.2rem;
+            color: #ecf0f1;
+            text-align: left;
+        }
+
+        .benefits li {
+            margin-bottom: 10px;
+        }
+
+        /* Botão de ação */
+        .cta-button {
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #e67e22;
+            transform: translateY(-5px);
+        }
+
+        /* Botão de dúvidas - Posicionado no canto inferior direito */
+        .cta-button-whatsapp {
+            background-color: #25d366; /* Verde do WhatsApp */
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-whatsapp:hover {
+            background-color: #128c7e; /* Cor mais escura do WhatsApp */
+            transform: translateY(-5px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .plan-card {
+                padding: 20px;
+            }
+
+            .plan-card h3 {
+                font-size: 2rem;
+            }
+
+            .plan-card .price {
+                font-size: 1.8rem;
+            }
+
+            .cta-button, .cta-button-whatsapp {
+                font-size: 1.1rem;
+                padding: 10px 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .plan-card h3 {
+                font-size: 1.8rem;
+            }
+
+            .plan-card .price {
+                font-size: 1.6rem;
+            }
+
+            .cta-button, .cta-button-whatsapp {
+                font-size: 1rem;
+                padding: 10px 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .plan-card {
+                padding: 15px;
+            }
+
+            .plan-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .plan-card .price {
+                font-size: 1.4rem;
+            }
+
+            .cta-button, .cta-button-whatsapp {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Container principal -->
+    <div class="container">
+
+        <!-- Plano 1: R$19,99 -->
+        <div class="plan-card">
+            <h3>Plano Mensal</h3>
+            <div class="price">R$19,99</div>
+            <ul class="benefits">
+                <li>✔ Acesso ao conteúdo exclusivo do canal</li>
+                <li>✔ Atualizações mensais de conteúdo</li>
+                <li>✔ Promoções exclusivas para membros</li>
+            </ul>
+            <a href="https://t.me/+89Spnn7Gjbs2NjMx" class="cta-button">Assinar Agora</a>
+        </div>
+
+        <!-- Plano 2: R$30,00 -->
+        <div class="plan-card">
+            <h3>Plano Eterno</h3>
+            <div class="price">R$30,00</div>
+            <ul class="benefits">
+                <li>✔ +950.000 videos Exclusivos</li>
+                <li>✔ Acesso completo ao conteúdo exclusivo</li>
+                <li>✔ Acesso antecipado a novos conteúdos</li>
+                <li>✔ Descontos especiais em promoções futuras</li>
+                <li>✔ Participação em sorteios exclusivos</li>
+
+            </ul>
+            <a href="https://t.me/+89Spnn7Gjbs2NjMx" class="cta-button">Assinar Agora</a>
+        </div>
+
+    </div>
+
+    <!-- Botão de Dúvidas -->
+    <a href="https://wa.me/55SEUNUMERO" class="cta-button-whatsapp">💬</a>
+
+</body>
+</html>
