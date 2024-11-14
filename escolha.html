@@ -271,7 +271,7 @@
                 <li>✔ Atualizações mensais de conteúdo</li>
                 <li>✔ Promoções exclusivas para membros</li>
             </ul>
-            <a href="javascript:void(0);" class="cta-button" onclick="showPopup()">Assinar Agora</a>
+            <a href="javascript:void(0);" class="cta-button" onclick="showPopup('https://pay.kirvano.com/a69354a2-fc7c-41c1-a21b-a2f381034208?customer.name=Cliente%20da%20Silva&customer.email=contato@gruposegrupos.com.br&customer.document=40595639860&customer.phone=5516997235877')">Assinar Agora</a>
         </div>
 
         <!-- Plano 2: R$ 20,00 -->
@@ -285,7 +285,7 @@
                 <li>✔ Descontos especiais em promoções futuras</li>
                 <li>✔ Participação em sorteios exclusivos</li>
             </ul>
-            <a href="javascript:void(0);" class="cta-button" onclick="showPopup()">Assinar Agora</a>
+            <a href="javascript:void(0);" class="cta-button" onclick="showPopup('https://pay.kirvano.com/16c88bcf-e118-4616-950c-15b8752c4117?customer.name=Cliente%20da%20Silva&customer.email=contato@gruposegrupos.com.br&customer.document=40595639860&customer.phone=5516997235877')">Assinar Agora</a>
         </div>
 
     </div>
@@ -297,7 +297,7 @@
 
     <!-- Pop-up -->
     <div id="popup">
-        <p>Usaremos um nome fictício para garantir o seu anonimato. <br>Redirecionando em <span id="countdown">5</span>...</p>
+        <p>Usamos um nome fictício para garantir o seu anonimato.  <br>Redirecionando em <span id="countdown">5</span>...</p>
     </div>
 
     <!-- Botão de Dúvidas -->
@@ -305,12 +305,12 @@
 
     <!-- Botões adicionais -->
     <div class="additional-buttons">
-        <a href="/" class="cta-button">Página Principal</a>
-        <a href="#conteudo-gratis" class="cta-button">Ver Conteúdo Grátis</a>
+        <a href="https://dralarissa.github.io" class="cta-button">Página Principal</a>
+        <a href="https://dralarissa.github.io" class="cta-button">Ver Conteúdo Grátis</a>
     </div>
 
     <script>
-        function showPopup() {
+        function showPopup(url) {
             document.getElementById('popup').style.display = 'block';
             var countdown = 5;
             var countdownElement = document.getElementById('countdown');
@@ -320,7 +320,7 @@
                 if (countdown === 0) {
                     clearInterval(interval);
                     // Redireciona após 5 segundos
-                    window.location.href = "https://pay.kirvano.com/16c88bcf-e118-4616-950c-15b8752c4117?customer.name=Cliente%20da%20Silva&customer.email=contato@gruposegrupos.com.br&customer.document=40595639860&customer.phone=5516997235877";
+                    window.location.href = url;
                 }
             }, 1000);
         }
