@@ -100,6 +100,20 @@
             transition: all 0.3s ease;
             display: inline-block;
             margin-bottom: 10px;
+            animation: pulse 1.5s infinite; /* Pulsação do botão */
+        }
+
+        /* Animação de pulsação */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         .cta-button:hover {
@@ -144,6 +158,38 @@
         .disclaimer strong {
             color: #fff;
             font-weight: bold;
+        }
+
+        /* Pop-up */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Botões adicionais */
+        .additional-buttons {
+            margin-top: 30px;
+        }
+
+        .additional-buttons .cta-button {
+            background-color: #2980b9;
+            font-size: 1.2rem;
+            padding: 12px 25px;
+            margin: 0 10px;
+        }
+
+        .additional-buttons .cta-button:hover {
+            background-color: #3498db;
         }
 
         /* Responsividade */
@@ -225,7 +271,7 @@
                 <li>✔ Atualizações mensais de conteúdo</li>
                 <li>✔ Promoções exclusivas para membros</li>
             </ul>
-            <a href="https://pay.kirvano.com/16c88bcf-e118-4616-950c-15b8752c4117?customer.name=Cliente%20da%20Silva&customer.email=contato@gruposegrupos.com.br&customer.document=40595639860&customer.phone=5516997235877" class="cta-button">Assinar Agora</a>
+            <a href="javascript:void(0);" class="cta-button" onclick="showPopup()">Assinar Agora</a>
         </div>
 
         <!-- Plano 2: R$ 20,00 -->
@@ -239,7 +285,7 @@
                 <li>✔ Descontos especiais em promoções futuras</li>
                 <li>✔ Participação em sorteios exclusivos</li>
             </ul>
-            <a href="https://pay.kirvano.com/16c88bcf-e118-4616-950c-15b8752c4117?customer.name=Cliente%20da%20Silva&customer.email=contato@gruposegrupos.com.br&customer.document=40595639860&customer.phone=5516997235877" class="cta-button">Assinar Agora</a>
+            <a href="javascript:void(0);" class="cta-button" onclick="showPopup()">Assinar Agora</a>
         </div>
 
     </div>
@@ -249,8 +295,36 @@
         <p><strong>⚠️ Usamos dados fictícios para garantir o seu anonimato. Você será direcionado para o conteúdo imediatamente quando finalizar o pagamento.</strong></p>
     </div>
 
+    <!-- Pop-up -->
+    <div id="popup">
+        <p>Usaremos um nome fictício para garantir o seu anonimato. <br>Redirecionando em <span id="countdown">5</span>...</p>
+    </div>
+
     <!-- Botão de Dúvidas -->
     <a href="https://wa.me/55SEUNUMERO" class="cta-button-whatsapp">💬</a>
+
+    <!-- Botões adicionais -->
+    <div class="additional-buttons">
+        <a href="/" class="cta-button">Página Principal</a>
+        <a href="#conteudo-gratis" class="cta-button">Ver Conteúdo Grátis</a>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            var countdown = 5;
+            var countdownElement = document.getElementById('countdown');
+            var interval = setInterval(function() {
+                countdown--;
+                countdownElement.textContent = countdown;
+                if (countdown === 0) {
+                    clearInterval(interval);
+                    // Redireciona após 5 segundos
+                    window.location.href = "https://pay.kirvano.com/16c88bcf-e118-4616-950c-15b8752c4117?customer.name=Cliente%20da%20Silva&customer.email=contato@gruposegrupos.com.br&customer.document=40595639860&customer.phone=5516997235877";
+                }
+            }, 1000);
+        }
+    </script>
 
 </body>
 </html>
