@@ -1,176 +1,136 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>🔞 Leak-King 🔞</title>
+    <title>Landing Page</title>
     <style>
-        /* Reset básico */
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Corpo da página */
-        body {
+            background-color: #000;
+            color: #fff;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff7b7b, #9c27b0); /* Gradiente de fundo moderno */
-            color: white;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            overflow-x: hidden;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        /* Container principal */
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            max-width: 1200px;
-            width: 100%;
-            margin-top: 50px;
-            justify-items: center;
             align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
             text-align: center;
         }
 
-        /* Vídeo */
-        .video-container {
+        .container {
             width: 100%;
-            height: 400px;
             max-width: 600px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Embed do vídeo */
-        .video-container iframe {
-            width: 100%;
+            animation: fadeIn 1.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             height: 100%;
-            border: none;
+            padding: 20px;
         }
 
-        /* Texto e botões */
-        .text-container {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 500px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        /* Título */
-        .text-container h2 {
-            font-size: 2rem;
-            color: #f39c12;
+        h1 {
+            font-size: 32px;
             margin-bottom: 20px;
             font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0; /* Evita que o título encolha */
         }
 
-        /* Descrição */
-        .text-container p {
-            font-size: 1.2rem;
-            color: #ecf0f1;
-            margin-bottom: 30px;
-            line-height: 1.6;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Botão de ação */
-        .cta-button {
-            background-color: #f39c12;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
+        iframe {
+            width: 100%;
+            height: 50vh; /* Ajuste a altura do vídeo para metade da tela */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: scaleIn 1.5s ease-in-out;
+            flex-grow: 1; /* Garante que o vídeo ocupe o máximo de espaço possível */
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff4500;
+            color: #fff;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-bottom: 15px; /* Espaço entre os botões */
-        }
-
-        .cta-button:hover {
-            background-color: #e67e22;
-            transform: translateY(-5px);
-        }
-
-        /* Botão 'Conteúdo Exclusivo' com pequeno ajuste */
-        .exclusive-button {
-            background-color: #8e44ad; /* Cor ligeiramente diferente */
+            font-size: 18px;
             border-radius: 5px;
-            padding: 12px 20px;
-            color: white;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+            animation: pulse 1.5s infinite;
+            transition: transform 0.3s;
+            flex-shrink: 0; /* Evita que o botão encolha */
         }
 
-        .exclusive-button:hover {
-            background-color: #9b59b6;
-            transform: translateY(-5px);
+        .button:hover {
+            transform: scale(1.1);
         }
 
-        /* Responsividade */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+            }
+        }
+
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            h1 {
+                font-size: 24px;
             }
 
-            .video-container {
-                height: 250px;
+            iframe {
+                height: 40vh; /* Menor altura para telas pequenas */
             }
 
-            .text-container h2 {
-                font-size: 1.8rem;
-            }
-
-            .text-container p {
-                font-size: 1rem;
-            }
-
-            .cta-button,
-            .exclusive-button {
-                font-size: 1rem;
-                padding: 10px 18px;
+            .button {
+                font-size: 16px;
+                padding: 10px 20px;
             }
         }
-
     </style>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Idioma padrão
+                includedLanguages: 'en,pt,es,fr,de,it', // Idiomas que você deseja incluir
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
-
-    <!-- Container principal -->
     <div class="container">
-
-        <!-- Coluna de vídeo -->
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/icLf4W4xHlA" 
-                title="LeakKing"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <!-- Coluna de texto -->
-        <div class="text-container">
-            <h2>Leak-King</h2>
-            <p>Você encontrou o melhor conteúdo da internet</p>
-            <a href="https://leak-king.github.io/redirect/grupoprincipal" class="cta-button"> 🔞 Entrar Grátis com Telegram 🔞 </a>
-            <a href="https://leak-king.github.io/escolha" class="exclusive-button"> 🔥 Conteúdo Exclusivo 🔥 </a> <!-- Novo botão -->
-        </div>
-
+        <h1>Venha ver mais de um milhão de vídeos proibidos em +256 países.</h1>
+        <iframe src="https://www.youtube.com/embed/7G37XQQHPZw?si=YlcelA1rk64rBJ_U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <a href="nextpage.html" class="button">Acessar Página</a>
     </div>
-
 </body>
 </html>
