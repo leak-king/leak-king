@@ -26,7 +26,7 @@
             animation: fadeIn 1.5s ease-in-out;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             height: 100%;
             padding: 20px;
         }
@@ -35,7 +35,7 @@
             font-size: 32px;
             margin-bottom: 20px;
             font-weight: bold;
-            flex-shrink: 0; /* Evita que o título encolha */
+            flex-shrink: 0;
         }
 
         @keyframes fadeIn {
@@ -51,11 +51,11 @@
 
         iframe {
             width: 100%;
-            height: 50vh; /* Ajuste a altura do vídeo para metade da tela */
+            height: 50vh;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             animation: scaleIn 1.5s ease-in-out;
-            flex-grow: 1; /* Garante que o vídeo ocupe o máximo de espaço possível */
+            flex-grow: 1;
         }
 
         @keyframes scaleIn {
@@ -69,33 +69,47 @@
             }
         }
 
-        .button {
+        .telegram-button {
             margin-top: 20px;
             padding: 15px 30px;
-            background-color: #ff4500;
+            background-color: #0088cc; /* Azul do Telegram */
             color: #fff;
             text-decoration: none;
             font-size: 18px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
-            animation: pulse 1.5s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0, 136, 204, 1);
             transition: transform 0.3s;
-            flex-shrink: 0; /* Evita que o botão encolha */
+            animation: neonPulse 1.5s infinite alternate;
         }
 
-        .button:hover {
+        .telegram-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .telegram-button:hover {
             transform: scale(1.1);
         }
 
-        @keyframes pulse {
+        @keyframes neonPulse {
             0% {
-                box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+                box-shadow: 0 0 5px rgba(0, 136, 204, 1), 0 0 15px rgba(0, 136, 204, 1), 0 0 30px rgba(0, 136, 204, 1);
+            }
+            25% {
+                box-shadow: 0 0 5px rgba(255, 0, 255, 1), 0 0 15px rgba(255, 0, 255, 1), 0 0 30px rgba(255, 0, 255, 1);
             }
             50% {
-                box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+                box-shadow: 0 0 5px rgba(0, 255, 0, 1), 0 0 15px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 1);
+            }
+            75% {
+                box-shadow: 0 0 5px rgba(255, 165, 0, 1), 0 0 15px rgba(255, 165, 0, 1), 0 0 30px rgba(255, 165, 0, 1);
             }
             100% {
-                box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+                box-shadow: 0 0 5px rgba(0, 136, 204, 1), 0 0 15px rgba(0, 136, 204, 1), 0 0 30px rgba(0, 136, 204, 1);
             }
         }
 
@@ -105,10 +119,10 @@
             }
 
             iframe {
-                height: 40vh; /* Menor altura para telas pequenas */
+                height: 40vh;
             }
 
-            .button {
+            .telegram-button {
                 font-size: 16px;
                 padding: 10px 20px;
             }
@@ -118,8 +132,8 @@
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en', // Idioma padrão
-                includedLanguages: 'en,pt,es,fr,de,it', // Idiomas que você deseja incluir
+                pageLanguage: 'en',
+                includedLanguages: 'en,pt,es,fr,de,it',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -130,7 +144,11 @@
     <div class="container">
         <h1>Venha ver mais de um milhão de vídeos proibidos em +256 países.</h1>
         <iframe src="https://www.youtube.com/embed/7G37XQQHPZw?si=YlcelA1rk64rBJ_U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <a href="nextpage.html" class="button">Acessar Página</a>
+        <!-- Botão com logo do Telegram -->
+        <a href="https://t.me/YourTelegramChannel" class="telegram-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo" />
+            Acesse no Telegram
+        </a>
     </div>
 </body>
 </html>
