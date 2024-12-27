@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Leak King</title>
+    <style>
+        /* Reset de margens e preenchimentos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #f1c40f;
+            margin-top: 20px;
+            text-shadow: 0 0 5px #fff, 0 0 15px #f1c40f;
+        }
+
+        .checkout-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #1f1f1f;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            margin: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-info {
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .product-info img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .product-info h2 {
+            font-size: 24px;
+            color: #f1c40f;
+            margin: 15px 0;
+        }
+
+        .product-info p {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f1c40f;
+            margin-top: 10px;
+        }
+
+        /* Carrossel de Imagens */
+        .carousel-container {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .carousel {
+            display: flex;
+            height: 100%;
+            width: 300%;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel img {
+            width: 33.33%;
+            object-fit: cover;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        /* Controle do carrossel */
+        .carousel-container:hover .carousel {
+            transform: translateX(-33.33%);
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn-buy {
+            padding: 12px 30px;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            font-weight: bold;
+        }
+
+        .btn-buy:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(231, 76, 60, 1);
+        }
+
+        .btn-buy:active {
+            transform: scale(1.02);
+        }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 480px) {
+            .product-info h2 {
+                font-size: 20px;
+            }
+
+            .product-info p {
+                font-size: 12px;
+            }
+
+            .price {
+                font-size: 18px;
+            }
+
+            .btn-buy {
+                font-size: 14px;
+                padding: 10px 25px;
+            }
+        }
+    </style>
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pt', // Idioma de origem
+      includedLanguages: 'en,es,fr,de,it', // Idiomas para os quais você quer oferecer tradução
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<body>
+
+    <h1>Garanta o acesso.</h1>
+
+    <div class="checkout-container">
+        <!-- Informações do Produto -->
+        <div class="product-info">
+            <img src="https://via.placeholder.com/600x400" alt="Produto">
+            <h2>Leak-King VIP</h2>
+            <p>No Vip do Leak-King você vai encontrar os melhores vazamentos da internet, apenas amadoras safadas que enviaram um video da buceta para o namorado e ele mandou para um amigo, e acabou vazando para todo o colégio. Venha ser VIP e desbloquear todo o nosso conteúdo.</p>
+            <div class="price">R$ 19,00</div>
+        </div>
+
+        <!-- Carrossel de Imagens -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="https://via.placeholder.com/600x400?text=Imagem+1" alt="Imagem 1">
+                <img src="https://via.placeholder.com/600x400?text=Imagem+2" alt="Imagem 2">
+                <img src="https://via.placeholder.com/600x400?text=Imagem+3" alt="Imagem 3">
+            </div>
+        </div>
+
+        <!-- Botão de Finalização -->
+        <div class="button-container">
+            <a href="#" class="btn-buy">Finalizar Compra</a>
+        </div>
+    </div>
+
+</body>
+</html>
