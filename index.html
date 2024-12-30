@@ -1,157 +1,42 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leak King</title>
+    <meta name="description" content="Dra Larissa LEak KIng">
+    <title>DraLarissa Leak King</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(45deg, #000, #3b3b3b, #111);
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            flex-direction: column;
-            text-align: center;
-            animation: backgroundColorChange 5s infinite alternate;
-        }
-
-        @keyframes backgroundColorChange {
-            0% {
-                background: linear-gradient(45deg, #000, #3b3b3b, #111);
-            }
-            50% {
-                background: linear-gradient(45deg, #1a1a1a, #5c5c5c, #333);
-            }
-            100% {
-                background: linear-gradient(45deg, #000, #3b3b3b, #111);
-            }
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { display: flex; justify-content: center; align-items: center; background-color: #000; height: 100vh; color: #333; }
         .container {
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 0, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 0, 255, 0.8);
-            animation: textVibration 1s infinite alternate;
-        }
-
-        @keyframes textVibration {
-            0% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(5px);
-            }
-            100% {
-                transform: translateX(-5px);
-            }
-        }
-
-        iframe {
-            width: 100%;
-            height: 50vh;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-        }
-
-        .telegram-button {
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: #0088cc; /* Azul do Telegram */
+            background-color: #111;
             color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 5px rgba(0, 136, 204, 1);
-            animation: neonGlow 1.5s infinite alternate;
+            width: 90%; max-width: 400px;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
         }
-
-        .telegram-button img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+        h1 { font-size: 24px; font-weight: bold; margin-bottom: 15px; }
+        p { font-size: 16px; margin-bottom: 20px; color: #ddd; line-height: 1.5; }
+        .button {
+            display: block; background-color: #fff; color: #000;
+            text-decoration: none; padding: 12px; border-radius: 30px;
+            font-size: 16px; font-weight: bold;
+            margin: 8px 0; transition: 0.3s;
         }
-
-        /* Efeito neon colorido contínuo ao redor do botão */
-        @keyframes neonGlow {
-            0% {
-                box-shadow: 0 0 5px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 0, 255, 1);
-            }
-            25% {
-                box-shadow: 0 0 5px rgba(255, 0, 255, 1), 0 0 20px rgba(255, 0, 255, 1), 0 0 30px rgba(0, 255, 255, 1), 0 0 50px rgba(255, 255, 0, 1);
-            }
-            50% {
-                box-shadow: 0 0 5px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 1), 0 0 30px rgba(255, 255, 0, 1), 0 0 50px rgba(255, 0, 255, 1);
-            }
-            75% {
-                box-shadow: 0 0 5px rgba(0, 0, 255, 1), 0 0 20px rgba(0, 0, 255, 1), 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(255, 255, 0, 1);
-            }
-            100% {
-                box-shadow: 0 0 5px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 0, 255, 1);
-            }
-        }
-
-        /* Sombra visível e colorida no texto */
-        .telegram-button span {
-            text-shadow: 0 0 15px rgba(255, 0, 0, 1), 0 0 30px rgba(0, 255, 0, 1), 0 0 45px rgba(0, 0, 255, 1);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            iframe {
-                height: 40vh;
-            }
-
-            .telegram-button {
-                font-size: 16px;
-                padding: 10px 20px;
-            }
-        }
+        .button:hover { background-color: #333; color: #fff; }
     </style>
-<!-- Google Translate -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'pt', // Idioma de origem
-      includedLanguages: 'en,es,fr,de,it', // Idiomas para os quais você quer oferecer tradução
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </head>
 <body>
-    <div class="container">
-        <h1>Venha ver mais de um milhão de vídeos proibidos em +256 países.</h1>
-        <iframe src="https://www.youtube.com/embed/7G37XQQHPZw?si=YlcelA1rk64rBJ_U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <!-- Botão com logo do Telegram -->
-        <a href="https://leak-king.github.io/redirect/" class="telegram-button">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo" />
-            <span>Acesse no Telegram</span>
-        </a>
-    </div>
+<div class="container">
+    <h1>Dra Larissa Leak KIng</h1>
+    <p>Descubra a magia do conteúdo oculto da internet. Garanta acesso completo agora</p>
+    <a href="https://t.me/+89Spnn7Gjbs2NjMx" class="button">Telegram Gratis</a>
+    <a href="https://dralarissa.github.io/escolha" class="button">Assinar VIP</a>
+    <a href="https://dralarissaleakking.blogspot.com/" class="button">Nosso blog</a>
+</div>
 </body>
 </html>
